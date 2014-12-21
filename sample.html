@@ -6,7 +6,7 @@
 <meta name="author" content="Nicolas Hoffmann" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <meta name="viewport" content="width=device-width" />
-<link rel="stylesheet" href="http://rocssti.nicolas-hoffmann.net/rocssti.css" />
+<link rel="stylesheet" href="http://rocssti.net/downloads/rocssti-fr.css" />
 
 <script>
 /*! jQuery v1.11.1 | (c) 2005, 2014 jQuery Foundation, Inc. | jquery.org/license */
@@ -23,9 +23,15 @@ $(document).ready(function(){
       $('.expandmore' ).each( function(index_to_expand) {
           var $this = $(this) ,
               index_lisible = index_to_expand+1,
-              $to_expand = $this.parent().next(".to_expand");
+              $to_expand = $this.next(".to_expand"),
+              $expandmore_text = $this.html();
           
-          $this.attr({
+          $this.html( '<button class="expandmore">' + $expandmore_text + '</button>' );
+          $button = $this.children('.expandmore');
+          
+          $this.removeClass('expandmore');
+          
+          $button.attr({
                   'id' : 'label_expand_' + index_lisible,
                   'aria-controls': 'expand_' + index_lisible,
                   'aria-expanded': 'false'
@@ -36,8 +42,8 @@ $(document).ready(function(){
                   'aria-labelledby': 'label_expand_' + index_lisible
                 });
           // quick tip to open
-          if ($to_expand.hasClass('is-opened') || $this.hasClass('is-opened') ){
-             $this.addClass('is-opened').attr('aria-expanded', 'true');
+          if ($to_expand.hasClass('is-opened') ){
+             $button.addClass('is-opened').attr('aria-expanded', 'true');
              $to_expand.removeClass('is-opened').removeAttr('aria-hidden');
           }
 
@@ -89,6 +95,10 @@ $(document).ready(function(){
 </script>
 
 <style>
+#page {
+  width: 960px;
+}
+
 
 .to_expand[aria-hidden=true] {
   display: none;
@@ -109,17 +119,17 @@ $(document).ready(function(){
 <div id="page">
  <h1>Hide/show system </h1>
 
-      <h2>
-      	<button class="expandmore bl">Content 1</button>
+      <h2 class="expandmore">
+      	Content 1
       </h2> 
       <div class="to_expand">here a wonderful hidden content about content 1</div>
       <br /><br /><br />
-      <h2>
-      	<button class="expandmore bl">Content 2</button>
+      <h2 class="expandmore">
+      	Content 2
       </h2> 
       <div class="to_expand is-opened">Lorem <a href="#">fdsfdsfds</a> ipsum about content 2 (opened by default)</div>
       <br /><br /><br />
-      <h2><button class="expandmore bl">Content 3</button> </h2>
+      <h2 class="expandmore">Content 3</h2>
       <div class="to_expand">here a wonderful hidden content about content 3</div>
 
 </div>
