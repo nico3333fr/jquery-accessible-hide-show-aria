@@ -8,17 +8,17 @@ A simple jQuery code to provide accessible hide/show system using ARIA
 This simple script transforms this simple piece of code:
 
 ```
-    <h2>
-    	<button class="expandmore bl">Content 1</button>
+    <h2 class="expandmore">
+    	Content 1
     </h2> 
     <div class="to_expand">here a wonderful hidden content about content 1</div>
     <br /><br /><br />
-    <h2>
-    	<button class="expandmore bl">Content 2</button>
+    <h2 class="expandmore">
+    	Content 2
     </h2> 
     <div class="to_expand is-opened">Lorem <a href="#">fdsfdsfds</a> ipsum about content 2 (opened by default)</div>
     <br /><br /><br />
-    <h2><button class="expandmore bl">Content 3</button> </h2>
+    <h2 class="expandmore">Content 3 </h2>
     <div class="to_expand">here a wonderful hidden content about content 3</div>
 ```
 
@@ -48,7 +48,7 @@ You can add:
  
 This jQuery plugin __doesn't style anything__, styles can be added using other classes.
 
-A very crappy example can be found here: http://www.nicolas-hoffmann.net/bordel/hide-show/
+A very crappy example can be found here: http://www.nicolas-hoffmann.net/bordel/hide-show/index2.html 
 
 Enjoy.
 
