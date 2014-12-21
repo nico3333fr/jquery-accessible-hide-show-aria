@@ -6,9 +6,15 @@ $(document).ready(function(){
       $('.expandmore' ).each( function(index_to_expand) {
           var $this = $(this) ,
               index_lisible = index_to_expand+1,
-              $to_expand = $this.parent().next(".to_expand");
+              $to_expand = $this.next(".to_expand"),
+              $expandmore_text = $this.html();
           
-          $this.attr({
+          $this.html( '<button class="expandmore">' + $expandmore_text + '</button>' );
+          $button = $this.children('.expandmore');
+          
+          $this.removeClass('expandmore');
+          
+          $button.attr({
                   'id' : 'label_expand_' + index_lisible,
                   'aria-controls': 'expand_' + index_lisible,
                   'aria-expanded': 'false'
@@ -19,8 +25,8 @@ $(document).ready(function(){
                   'aria-labelledby': 'label_expand_' + index_lisible
                 });
           // quick tip to open
-          if ($to_expand.hasClass('is-opened') || $this.hasClass('is-opened') ){
-             $this.addClass('is-opened').attr('aria-expanded', 'true');
+          if ($to_expand.hasClass('is-opened') ){
+             $button.addClass('is-opened').attr('aria-expanded', 'true');
              $to_expand.removeClass('is-opened').removeAttr('aria-hidden');
           }
 
