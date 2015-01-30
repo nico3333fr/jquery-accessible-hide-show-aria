@@ -36,10 +36,16 @@ Keyboard navigation is supported, based on ARIA DP (http://heydonworks.com/pract
 You can add:
 
 ```
-.expandmore[aria-expanded=false]:before {
+.expandmore__button {
+  background: none;
+  font-size: inherit;
+  color: inherit;
+}
+
+.expandmore__button[aria-expanded=false]:before {
   content : '+ ';
 }
-.expandmore[aria-expanded=true]:before {
+.expandmore__button[aria-expanded=true]:before {
   content : '- ';
 }
 ```
@@ -51,5 +57,7 @@ This jQuery plugin __doesn't style anything__, styles can be added using other c
 A very crappy example can be found here: http://www.nicolas-hoffmann.net/bordel/hide-show/index2.html 
 
 Enjoy.
+
+<img src="http://www.nicolas-hoffmann.net/bordel/chuck-norris1.jpg" alt="Chuck Norris approved this" />
 
 P.S: this plugin is in [MIT license](https://github.com/nico3333fr/jquery-accessible-tabs-aria/blob/master/LICENSE). It couldn't be done without the precious help of @ScreenFeedFr, @goetsu, @johan_ramon, @accesbilis, @Kozlika and @romaingervois.
