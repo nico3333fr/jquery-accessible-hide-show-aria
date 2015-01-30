@@ -9,10 +9,8 @@ $(document).ready(function(){
               $to_expand = $this.next(".to_expand"),
               $expandmore_text = $this.html();
           
-          $this.html( '<button class="expandmore">' + $expandmore_text + '</button>' );
-          $button = $this.children('.expandmore');
-          
-          $this.removeClass('expandmore');
+          $this.html( '<button class="expandmore__button">' + $expandmore_text + '</button>' );
+          $button = $this.children('.expandmore__button');
           
           $button.attr({
                   'id' : 'label_expand_' + index_lisible,
@@ -33,7 +31,7 @@ $(document).ready(function(){
       });
        
        
-      $( 'body' ).on( 'click', '.expandmore', function( event ) {
+      $( 'body' ).on( 'click', '.expandmore__button', function( event ) {
          var $this = $(this),
              $destination = $( '#' + $this.attr('aria-controls') );
          
@@ -49,8 +47,8 @@ $(document).ready(function(){
          event.preventDefault();
          
       })
-      .on( "keydown", ".expandmore", function( event ) {
-         if ( event.keyCode == 13 || event.keyCode == 32 ) {
+      .on( "keydown", ".expandmore__button", function( event ) {
+         if ( event.keyCode == 13 || event.keyCode == 32 ) { // enter or space
              var $this = $(this),
                  $destination = $( '#' + $this.attr('aria-controls') );
              
