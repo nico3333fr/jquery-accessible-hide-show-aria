@@ -65,7 +65,7 @@ $(document).ready(function(){
          
       })
       .on( "keydown", ".expandmore__button", function( event ) {
-         if ( event.keyCode == 13 || event.keyCode == 32 ) { // enter or space
+         if ( event.keyCode == 13 ) { // space comes from button tag
              var $this = $(this),
                  $destination = $( '#' + $this.attr('aria-controls') );
              
