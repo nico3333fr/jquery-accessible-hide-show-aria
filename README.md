@@ -54,7 +54,7 @@ You can add:
  
 This jQuery plugin __doesn't style anything__, styles can be added using other classes.
 
-A very crappy example can be found here: http://www.nicolas-hoffmann.net/bordel/hide-show/index2.html 
+A very crappy example can be found here: http://www.nicolas-hoffmann.net/bordel/hide-show/index.html 
 
 Enjoy.
 
