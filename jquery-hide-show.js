@@ -46,24 +46,7 @@ $(document).ready(function(){
          
          event.preventDefault();
          
-      })
-      .on( "keydown", ".expandmore__button", function( event ) {
-         if ( event.keyCode == 13 ) { // space comes from button tag
-             var $this = $(this),
-                 $destination = $( '#' + $this.attr('aria-controls') );
-             
-             if ($this.attr('aria-expanded') === 'false') {
-                 $this.addClass('is-opened').attr('aria-expanded', 'true');
-                 $destination.removeAttr('aria-hidden');
-             } 
-             else {
-                  $this.removeClass('is-opened').attr('aria-expanded', 'false');
-                  $destination.attr('aria-hidden', 'true');
-                  }
-             
-             event.preventDefault();
-         }
-      } );
+      });
        
 
    
