@@ -17,11 +17,11 @@ $(document).ready(function(){
 
 
    // loading expand paragraphs
-   if ( $('.expandmore').length  &&  $( ".to_expand" ).length ) { // if there are at least one :)
-      $('.expandmore' ).each( function(index_to_expand) {
+   if ( $('.js-expandmore').length  &&  $( ".js-to_expand" ).length ) { // if there are at least one :)
+      $('.js-expandmore' ).each( function(index_to_expand) {
           var $this = $(this) ,
               index_lisible = index_to_expand+1,
-              $to_expand = $this.next(".to_expand"),
+              $to_expand = $this.next(".js-to_expand"),
               $expandmore_text = $this.html();
           
           $this.html( '<button class="expandmore__button">' + $expandmore_text + '</button>' );
@@ -79,7 +79,7 @@ $(document).ready(function(){
 }
 
 
-.to_expand[aria-hidden=true] {
+.js-to_expand[aria-hidden=true] {
   display: none;
 }
 
@@ -98,18 +98,18 @@ $(document).ready(function(){
 <div id="page">
  <h1>Hide/show system </h1>
 
-      <h2 class="expandmore">
+      <h2 class="js-expandmore">
       	Content 1
       </h2> 
-      <div class="to_expand">here a wonderful hidden content about content 1</div>
+      <div class="js-to_expand">here a wonderful hidden content about content 1</div>
       <br /><br /><br />
-      <h2 class="expandmore">
+      <h2 class="js-expandmore">
       	Content 2
       </h2> 
-      <div class="to_expand is-opened">Lorem <a href="#">fdsfdsfds</a> ipsum about content 2 (opened by default)</div>
+      <div class="js-to_expand is-opened">Lorem <a href="#">fdsfdsfds</a> ipsum about content 2 (opened by default)</div>
       <br /><br /><br />
-      <h2 class="expandmore">Content 3</h2>
-      <div class="to_expand">here a wonderful hidden content about content 3</div>
+      <h2 class="js-expandmore">Content 3</h2>
+      <div class="js-to_expand">here a wonderful hidden content about content 3</div>
 
 </div>
 </body>
