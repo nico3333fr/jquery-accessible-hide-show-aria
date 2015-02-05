@@ -8,18 +8,18 @@ A simple jQuery code to provide accessible hide/show system using ARIA
 This simple script transforms this simple piece of code:
 
 ```
-    <h2 class="expandmore">
+    <h2 class="js-expandmore">
     	Content 1
     </h2> 
-    <div class="to_expand">here a wonderful hidden content about content 1</div>
+    <div class="js-to_expand">here a wonderful hidden content about content 1</div>
     <br /><br /><br />
-    <h2 class="expandmore">
+    <h2 class="js-expandmore">
     	Content 2
     </h2> 
-    <div class="to_expand is-opened">Lorem <a href="#">fdsfdsfds</a> ipsum about content 2 (opened by default)</div>
+    <div class="js-to_expand is-opened">Lorem <a href="#">fdsfdsfds</a> ipsum about content 2 (opened by default)</div>
     <br /><br /><br />
-    <h2 class="expandmore">Content 3 </h2>
-    <div class="to_expand">here a wonderful hidden content about content 3</div>
+    <h2 class="js-expandmore">Content 3 </h2>
+    <div class="js-to_expand">here a wonderful hidden content about content 3</div>
 ```
 
 into shiny accessible hide/show by adding ARIA attributes. 
@@ -29,7 +29,7 @@ Keyboard navigation is supported, based on ARIA DP (http://heydonworks.com/pract
 ## Requirements
 
 - jQuery (others smaller libraries should be ok, but didn't test for the moment)
-- a small piece of CSS `` .to_expand[aria-hidden=true] { display: none; } ``
+- a small piece of CSS `` .js-to_expand[aria-hidden=true] { display: none; } ``
 
 ## Optionnal
 
@@ -54,7 +54,7 @@ You can add:
  
 This jQuery plugin __doesn't style anything__, styles can be added using other classes.
 
-A very crappy example can be found here: http://www.nicolas-hoffmann.net/bordel/hide-show/index.html 
+A example and demo page can be found here: http://a11y.nicolas-hoffmann.net/hide-show/
 
 Enjoy.
 
