@@ -7,7 +7,7 @@ A simple jQuery code to provide accessible hide/show system using ARIA
 
 This simple script transforms this simple piece of code:
 
-```
+```html
     <h2 class="js-expandmore">
     	Content 1
     </h2> 
