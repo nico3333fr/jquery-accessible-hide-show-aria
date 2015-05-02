@@ -1,6 +1,10 @@
 $(document).ready(function(){
 
-
+   /*
+    * jQuery simple and accessible hide-show system (collapsible regions), using ARIA
+    * Website: http://a11y.nicolas-hoffmann.net/hide-show/
+    * License MIT: https://github.com/nico3333fr/jquery-accessible-hide-show-aria/blob/master/LICENSE
+    */
    // loading expand paragraphs
    if ( $('.js-expandmore').length  &&  $( ".js-to_expand" ).length ) { // if there are at least one :)
       $('.js-expandmore' ).each( function(index_to_expand) {
