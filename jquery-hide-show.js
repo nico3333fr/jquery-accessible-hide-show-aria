@@ -39,7 +39,7 @@ $(document).ready(function(){
       });
        
        
-      $( '.js-expandmore-button', '.js-expandmore' ).on( 'click', function( event ) {
+      $( '.js-expandmore-button' ).on( 'click', function( event ) {
          var $this = $(this),
              $destination = $( '#' + $this.attr('aria-controls') );
          
