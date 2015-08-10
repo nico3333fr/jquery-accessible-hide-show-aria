@@ -10,11 +10,15 @@ $(document).ready(function(){
       $('.js-expandmore' ).each( function(index_to_expand) {
           var $this = $(this) ,
               index_lisible = index_to_expand+1,
+              options = $this.data(),
+              $hideshow_prefix_classes = typeof options.hideshowPrefixClass !== 'undefined' ? options.hideshowPrefixClass + '-' : '',
               $to_expand = $this.next(".js-to_expand"),
               $expandmore_text = $this.html();
           
-          $this.html( '<button class="expandmore__button">' + $expandmore_text + '</button>' );
-          $button = $this.children('.expandmore__button');
+          $this.html( '<button class="' + $hideshow_prefix_classes + 'expandmore__button js-expandmore-button">' + $expandmore_text + '</button>' );
+          $button = $this.children('.js-expandmore-button');
+          
+          $to_expand.addClass( $hideshow_prefix_classes + 'expandmore__to_expand' );
           
           $button.attr({
                   'id' : 'label_expand_' + index_lisible,
@@ -35,7 +39,7 @@ $(document).ready(function(){
       });
        
        
-      $( '.expandmore__button' ).on( 'click', function( event ) {
+      $( '.js-expandmore-button', '.js-expandmore' ).on( 'click', function( event ) {
          var $this = $(this),
              $destination = $( '#' + $this.attr('aria-controls') );
          
