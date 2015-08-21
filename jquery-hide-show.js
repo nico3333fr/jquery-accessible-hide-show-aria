@@ -55,6 +55,27 @@ $(document).ready(function(){
          event.preventDefault();
          
       });
+	  
+      $( '.js-expandmore' ).on( 'click keydown', function( event ) {
+         var $this = $(this)
+             $target = $(event.target),
+             $button_in = $this.find( '.js-expandmore-button' );
+             
+         if ( !$target.is($button_in) ) {
+             
+             if ( event.type == 'click' ){
+                 $button_in.trigger('click');
+			           return false;
+		            }
+		         if ( event.type == 'keydown' && (event.keyCode==13 || event.keyCode==32 )  ){
+                 $button_in.trigger('click');
+                 return false;
+		            }
+             
+             } 
+         
+         
+      });
        
 
    
