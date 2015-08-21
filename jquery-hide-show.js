@@ -65,12 +65,12 @@ $(document).ready(function(){
              
              if ( event.type == 'click' ){
                  $button_in.trigger('click');
-			           return false;
-		            }
+                 return false;
+                 }
 		         if ( event.type == 'keydown' && (event.keyCode==13 || event.keyCode==32 )  ){
                  $button_in.trigger('click');
                  return false;
-		            }
+                 }
              
              } 
          
