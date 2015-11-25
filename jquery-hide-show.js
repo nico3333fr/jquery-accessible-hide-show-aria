@@ -6,8 +6,26 @@ $(document).ready(function(){
     * License MIT: https://github.com/nico3333fr/jquery-accessible-hide-show-aria/blob/master/LICENSE
     */
    // loading expand paragraphs
-   if ( $('.js-expandmore').length  &&  $( ".js-to_expand" ).length ) { // if there are at least one :)
-      $('.js-expandmore' ).each( function(index_to_expand) {
+   var use_aria = true,
+       attr_control = 'aria-controls',
+       attr_expanded = 'aria-expanded',
+       attr_labelledby = 'aria-labelledby',
+       attr_hidden = 'aria-hidden',
+       $expandmore = $('.js-expandmore'),
+       $to_expand = $('.js-to_expand');
+
+   // just parameter use_aria or set yourself the settings above if you know exactly what you need to use as attributes
+   if ( use_aria === false ){
+       attr_control = 'data-controls';
+       attr_expanded = 'data-expanded';
+       attr_labelledby = 'data-labelledby';
+       attr_hidden = 'data-hidden';
+      }
+	  
+   
+
+   if ( $expandmore.length  &&  $to_expand.length ) { // if there are at least one :)
+      $expandmore.each( function(index_to_expand) {
           var $this = $(this) ,
               index_lisible = index_to_expand+1,
               options = $this.data(),
@@ -20,44 +38,42 @@ $(document).ready(function(){
           
           $to_expand.addClass( $hideshow_prefix_classes + 'expandmore__to_expand' );
           
-          $button.attr({
-                  'id' : 'label_expand_' + index_lisible,
-                  'aria-controls': 'expand_' + index_lisible,
-                  'aria-expanded': 'false'
-                });
-          $to_expand.attr({
-                  'id' : 'expand_' + index_lisible,
-                  'aria-hidden': 'true',
-                  'aria-labelledby': 'label_expand_' + index_lisible
-                });
+          $button.attr('id', 'label_expand_' + index_lisible);
+          $button.attr(attr_control, 'expand_' + index_lisible);
+          $button.attr(attr_expanded, 'false');
+
+          $to_expand.attr('id', 'expand_' + index_lisible);
+          $to_expand.attr(attr_hidden, 'true');
+          $to_expand.attr(attr_labelledby, 'label_expand_' + index_lisible);
+		  
           // quick tip to open
           if ($to_expand.hasClass('is-opened') ){
-             $button.addClass('is-opened').attr('aria-expanded', 'true');
-             $to_expand.removeClass('is-opened').removeAttr('aria-hidden');
+             $button.addClass('is-opened').attr(attr_expanded, 'true');
+             $to_expand.removeClass('is-opened').removeAttr(attr_hidden);
           }
 
       });
        
-       
+      
       $( '.js-expandmore-button' ).on( 'click', function( event ) {
          var $this = $(this),
-             $destination = $( '#' + $this.attr('aria-controls') );
+             $destination = $( '#' + $this.attr(attr_control) );
          
-         if ($this.attr('aria-expanded') === 'false') {
-             $this.addClass('is-opened').attr('aria-expanded', 'true');
-             $destination.removeAttr('aria-hidden');
+         if ($this.attr(attr_expanded) === 'false') {
+             $this.addClass('is-opened').attr(attr_expanded, 'true');
+             $destination.removeAttr(attr_hidden);
          } 
          else {
-              $this.removeClass('is-opened').attr('aria-expanded', 'false');
-              $destination.attr('aria-hidden', 'true');
+              $this.removeClass('is-opened').attr(attr_expanded, 'false');
+              $destination.attr(attr_hidden, 'true');
               }
          
          event.preventDefault();
          
       });
 	  
-      $( '.js-expandmore' ).on( 'click keydown', function( event ) {
-         var $this = $(this)
+      $expandmore.on( 'click keydown', function( event ) {
+         var $this = $(this),
              $target = $(event.target),
              $button_in = $this.find( '.js-expandmore-button' );
              
@@ -67,7 +83,7 @@ $(document).ready(function(){
                  $button_in.trigger('click');
                  return false;
                  }
-		         if ( event.type == 'keydown' && (event.keyCode==13 || event.keyCode==32 )  ){
+             if ( event.type == 'keydown' && (event.keyCode==13 || event.keyCode==32 )  ){
                  $button_in.trigger('click');
                  return false;
                  }
