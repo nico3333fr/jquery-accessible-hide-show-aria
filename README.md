@@ -33,7 +33,9 @@ Keyboard navigation is supported, based on ARIA DP (http://heydonworks.com/pract
 
 ## Optionnal
 
-You can add:
+You may set up if you're using aria or data attributes.
+
+For CSS, you may add:
 
 ```
 .expandmore__button {
@@ -42,10 +44,12 @@ You can add:
   color: inherit;
 }
 
-.expandmore__button[aria-expanded=false]:before {
+.expandmore__button[aria-expanded=false]:before,
+.expandmore__button[data-expanded=false]:before{
   content : '+ ';
 }
-.expandmore__button[aria-expanded=true]:before {
+.expandmore__button[aria-expanded=true]:before,
+.expandmore__button[data-expanded=true]:before{
   content : '- ';
 }
 ```
