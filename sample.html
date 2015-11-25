@@ -17,16 +17,26 @@
 }
 
 
-.js-to_expand[aria-hidden=true] {
+.js-to_expand[aria-hidden=true],
+.js-to_expand[data-hidden=true] {
   display: none;
 }
-
 /* optionnal or prefix with .js with modernizr */
-.expandmore__button[aria-expanded=false]:before {
+.expandmore__button[aria-expanded=false]:before,
+.expandmore__button[data-expanded=false]:before {
   content : '+ ';
+  speak: none;
 }
-.expandmore__button[aria-expanded=true]:before {
+.expandmore__button[aria-expanded=true]:before,
+.expandmore__button[data-expanded=true]:before {
   content : '- ';
+  speak: none;
+}
+
+.expandmore__button {
+  background: none;
+  font-size: inherit;
+  color: inherit;
 }
 
 
