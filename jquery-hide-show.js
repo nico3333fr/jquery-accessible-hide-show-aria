@@ -12,7 +12,8 @@ $(document).ready(function(){
        attr_labelledby = 'aria-labelledby',
        attr_hidden = 'aria-hidden',
        $expandmore = $('.js-expandmore'),
-       $to_expand = $('.js-to_expand');
+       $to_expand = $('.js-to_expand'),
+       delay = 1500;
 
    // just parameter use_aria or set yourself the settings above if you know exactly what you need to use as attributes
    if ( use_aria === false ){
@@ -36,9 +37,10 @@ $(document).ready(function(){
           $this.html( '<button class="' + $hideshow_prefix_classes + 'expandmore__button js-expandmore-button">' + $expandmore_text + '</button>' );
           $button = $this.children('.js-expandmore-button');
           
-          $to_expand.addClass( $hideshow_prefix_classes + 'expandmore__to_expand' ).stop().delay( 300 ).queue( function() {
-            if ($(this).hasClass('js-first_load')) {
-              $(this).removeClass('js-first_load');
+          $to_expand.addClass( $hideshow_prefix_classes + 'expandmore__to_expand' ).stop().delay( delay ).queue( function() {
+            var $this = $(this); 
+            if ($this.hasClass('js-first_load')) {
+               $this.removeClass('js-first_load');
             }
           });
           
