@@ -36,7 +36,11 @@ $(document).ready(function(){
           $this.html( '<button class="' + $hideshow_prefix_classes + 'expandmore__button js-expandmore-button">' + $expandmore_text + '</button>' );
           $button = $this.children('.js-expandmore-button');
           
-          $to_expand.addClass( $hideshow_prefix_classes + 'expandmore__to_expand' );
+          $to_expand.addClass( $hideshow_prefix_classes + 'expandmore__to_expand' ).stop().delay( 300 ).queue( function() {
+            if ($(this).hasClass('js-first_load')) {
+              $(this).removeClass('js-first_load');
+            }
+          });
           
           $button.attr('id', 'label_expand_' + index_lisible);
           $button.attr(attr_control, 'expand_' + index_lisible);
