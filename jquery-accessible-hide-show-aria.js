@@ -59,49 +59,49 @@ $(document).ready(function(){
           }
 
       });
+
+   
+   }
        
       
-      $( '.js-expandmore-button' ).on( 'click', function( event ) {
-         var $this = $(this),
-             $destination = $( '#' + $this.attr(attr_control) );
+   $( '.js-expandmore-button' ).on( 'click', function( event ) {
+      var $this = $(this),
+          $destination = $( '#' + $this.attr(attr_control) );
          
-         if ($this.attr(attr_expanded) === 'false') {
-             $this.addClass('is-opened').attr(attr_expanded, 'true');
-             $destination.removeAttr(attr_hidden);
+      if ($this.attr(attr_expanded) === 'false') {
+          $this.addClass('is-opened').attr(attr_expanded, 'true');
+          $destination.removeAttr(attr_hidden);
          } 
          else {
               $this.removeClass('is-opened').attr(attr_expanded, 'false');
               $destination.attr(attr_hidden, 'true');
               }
          
-         event.preventDefault();
+      event.preventDefault();
          
-      });
+   });
 	  
-      $expandmore.on( 'click keydown', function( event ) {
-         var $this = $(this),
-             $target = $(event.target),
-             $button_in = $this.find( '.js-expandmore-button' );
+   $expandmore.on( 'click keydown', function( event ) {
+      var $this = $(this),
+          $target = $(event.target),
+          $button_in = $this.find( '.js-expandmore-button' );
              
-         if ( !$target.is($button_in) ) {
+      if ( !$target.is($button_in) ) {
              
-             if ( event.type == 'click' ){
-                 $button_in.trigger('click');
-                 return false;
-                 }
-             if ( event.type == 'keydown' && (event.keyCode==13 || event.keyCode==32 )  ){
-                 $button_in.trigger('click');
-                 return false;
-                 }
+          if ( event.type == 'click' ){
+              $button_in.trigger('click');
+              return false;
+              }
+          if ( event.type == 'keydown' && (event.keyCode==13 || event.keyCode==32 )  ){
+              $button_in.trigger('click');
+              return false;
+              }
              
-             } 
+          } 
          
          
-      });
+   });
        
 
-   
-   }
- 
   
 });
