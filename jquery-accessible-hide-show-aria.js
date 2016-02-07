@@ -64,7 +64,7 @@ $(document).ready(function(){
    }
        
       
-   $( '.js-expandmore-button' ).on( 'click', function( event ) {
+   $( 'body' ).on( 'click', '.js-expandmore-button', function( event ) {
       var $this = $(this),
           $destination = $( '#' + $this.attr(attr_control) );
          
@@ -81,7 +81,7 @@ $(document).ready(function(){
          
    });
 	  
-   $expandmore.on( 'click keydown', function( event ) {
+   $( 'body' ).on( 'click keydown', '.js-expandmore', function( event ) {
       var $this = $(this),
           $target = $(event.target),
           $button_in = $this.find( '.js-expandmore-button' );
