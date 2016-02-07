@@ -1,7 +1,9 @@
 Jquery accessible hide/show using ARIA
 =================================
 
-A simple jQuery code to provide accessible hide/show system using ARIA
+A simple jQuery code to provide accessible hide/show system using ARIA.
+
+Full demo is here: http://a11y.nicolas-hoffmann.net/hide-show/
 
 ===========================
 
@@ -30,6 +32,7 @@ Keyboard navigation is supported, based on ARIA DP (http://heydonworks.com/pract
 
 - jQuery (others smaller libraries should be ok, but didn't test for the moment)
 - a small piece of CSS `` .js-to_expand[aria-hidden=true] { display: none; } ``
+- or you may use ```npm i jquery-accessible-hide-show-aria```
 
 ## Optionnal
 
