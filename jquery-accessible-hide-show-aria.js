@@ -6,23 +6,14 @@ $(document).ready(function(){
     * License MIT: https://github.com/nico3333fr/jquery-accessible-hide-show-aria/blob/master/LICENSE
     */
    // loading expand paragraphs
-   var use_aria = true,
-       attr_control = 'aria-controls',
+   // these are recommended settings by a11y experts. You may update to fulfill your needs, but be sure of what you’re doing.
+   var attr_control = 'data-controls',
        attr_expanded = 'aria-expanded',
-       attr_labelledby = 'aria-labelledby',
-       attr_hidden = 'aria-hidden',
+       attr_labelledby = 'data-labelledby',
+       attr_hidden = 'data-hidden',
        $expandmore = $('.js-expandmore'),
        $to_expand = $('.js-to_expand'),
        delay = 1500;
-
-   // just parameter use_aria or set yourself the settings above if you know exactly what you need to use as attributes
-   if ( use_aria === false ){
-       attr_control = 'data-controls';
-       attr_expanded = 'data-expanded';
-       attr_labelledby = 'data-labelledby';
-       attr_hidden = 'data-hidden';
-      }
-	  
    
 
    if ( $expandmore.length  &&  $to_expand.length ) { // if there are at least one :)
