@@ -13,6 +13,7 @@ $(document).ready(function(){
        attr_hidden = 'data-hidden',
        $expandmore = $('.js-expandmore'),
        $to_expand = $('.js-to_expand'),
+       $body = $('body'),
        delay = 1500;
    
 
@@ -55,7 +56,7 @@ $(document).ready(function(){
    }
        
       
-   $( 'body' ).on( 'click', '.js-expandmore-button', function( event ) {
+   $body.on( 'click', '.js-expandmore-button', function( event ) {
       var $this = $(this),
           $destination = $( '#' + $this.attr(attr_control) );
          
@@ -72,12 +73,12 @@ $(document).ready(function(){
          
    });
 	  
-   $( 'body' ).on( 'click keydown', '.js-expandmore', function( event ) {
+   $body.on( 'click keydown', '.js-expandmore', function( event ) {
       var $this = $(this),
           $target = $(event.target),
           $button_in = $this.find( '.js-expandmore-button' );
              
-      if ( !$target.is($button_in) ) {
+      if ( !$target.is($button_in) && !$target.closest($button_in).length ) {
              
           if ( event.type == 'click' ){
               $button_in.trigger('click');
