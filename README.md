@@ -31,7 +31,7 @@ Keyboard navigation is supported, based on ARIA DP (http://heydonworks.com/pract
 ## Requirements
 
 - jQuery (others smaller libraries should be ok, but didn't test for the moment)
-- a small piece of CSS `` .js-to_expand[aria-hidden=true] { display: none; } ``
+- a small piece of CSS `` .js-to_expand[data-hidden=true] { display: none; } ``
 - or you may use ```npm i jquery-accessible-hide-show-aria```
 
 ## Optionnal
