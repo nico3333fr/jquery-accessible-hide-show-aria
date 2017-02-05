@@ -1,23 +1,23 @@
 {
   "name": "jquery-accessible-hide-show-aria",
   "description": "A simple jQuery code to provide an accessible hide/show system (collapsible region), using ARIA.",
-  "homepage": "http://a11y.nicolas-hoffmann.net/hide-show/",
+  "homepage": "https://a11y.nicolas-hoffmann.net/hide-show/",
   "main": "jquery-accessible-hide-show-aria.js",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "keywords": [
     "Accessibility",
     "ARIA",
     "hide/show",
-	  "collapsible region",
-	  "accessible",
+    "collapsible region",
+    "accessible",
     "a11y",
-	  "jQueryPlugin"
+    "jQueryPlugin"
   ],
   "authors": [
     {
       "name": "Nicolas Hoffmann",
       "email": "dante3333@gmail.com",
-      "web": "http://www.nicolas-hoffmann.net/"
+      "web": "https://www.nicolas-hoffmann.net/"
     }
   ],
   "dependencies": {
