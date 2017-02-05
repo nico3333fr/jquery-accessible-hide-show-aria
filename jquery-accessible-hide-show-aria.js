@@ -1,4 +1,4 @@
-$(document).ready(function(){
+jQuery(document).ready(function($){
 
    /*
     * jQuery simple and accessible hide-show system (collapsible regions), using ARIA
