@@ -3,7 +3,7 @@ Jquery accessible hide/show using ARIA
 
 A simple jQuery code to provide accessible hide/show system using ARIA.
 
-Full demo is here: http://a11y.nicolas-hoffmann.net/hide-show/
+Full demo is here: https://a11y.nicolas-hoffmann.net/hide-show/
 
 ===========================
 
@@ -61,10 +61,14 @@ For CSS, you may add:
  
 This jQuery plugin __doesn't style anything__, styles can be added using other classes.
 
-A demo page can be found here: http://a11y.nicolas-hoffmann.net/hide-show/
+A demo page can be found here: https://a11y.nicolas-hoffmann.net/hide-show/
 
 Enjoy.
 
-<img src="http://www.nicolas-hoffmann.net/bordel/chuck-norris1.jpg" alt="Chuck Norris approved this" />
+## Vanilla version
+
+This script exists also in a Vanilla-JS version, have a look at [Van11y hide-show script](https://van11y.net/accessible-hide-show/).
+
+<img src="https://www.nicolas-hoffmann.net/bordel/chuck-norris1.jpg" alt="Chuck Norris approved this" />
 
 P.S: this plugin is in [MIT license](https://github.com/nico3333fr/jquery-accessible-tabs-aria/blob/master/LICENSE). It couldn't be done without the precious help of @ScreenFeedFr, @goetsu, @johan_ramon, @accesbilis, @Kozlika and @romaingervois.
