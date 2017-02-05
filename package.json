@@ -2,7 +2,7 @@
   "title": "jQuery accessible hide/show system (collapsible sections) using ARIA",
   "name": "jquery-accessible-hide-show-aria",
   "description": "This jQuery plugin will provide a shiny and accessible hide/show system (collapsible region), using ARIA.",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "keywords": [
     "Accessibility",
     "ARIA",
