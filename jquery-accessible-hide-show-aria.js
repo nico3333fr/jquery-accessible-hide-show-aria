@@ -2,7 +2,7 @@ jQuery(document).ready(function($){
 
    /*
     * jQuery simple and accessible hide-show system (collapsible regions), using ARIA
-    * @version v1.3.6
+    * @version v1.4.0    
     * Website: http://a11y.nicolas-hoffmann.net/hide-show/
     * License MIT: https://github.com/nico3333fr/jquery-accessible-hide-show-aria/blob/master/LICENSE
     */
@@ -15,7 +15,8 @@ jQuery(document).ready(function($){
        $expandmore = $('.js-expandmore'),
        $to_expand = $('.js-to_expand'),
        $body = $('body'),
-       delay = 1500;
+       delay = 1500,
+       hash = window.location.hash.replace( "#", "" );
    
 
    if ( $expandmore.length  &&  $to_expand.length ) { // if there are at least one :)
@@ -44,12 +45,13 @@ jQuery(document).ready(function($){
           $to_expand.attr('id', 'expand_' + index_lisible);
           $to_expand.attr(attr_hidden, 'true');
           $to_expand.attr(attr_labelledby, 'label_expand_' + index_lisible);
-		  
-          // quick tip to open
-          if ($to_expand.hasClass('is-opened') ){
+
+          // quick tip to open (if it has class is-opened or if hash is in expand)
+          if ($to_expand.hasClass('is-opened') || ( hash !== "" && $to_expand.find($( "#" + hash )).length ) ){
              $button.addClass('is-opened').attr(attr_expanded, 'true');
              $to_expand.removeClass('is-opened').removeAttr(attr_hidden);
           }
+
 
       });
 
@@ -94,7 +96,6 @@ jQuery(document).ready(function($){
          
          
    });
-       
 
-  
+
 });
