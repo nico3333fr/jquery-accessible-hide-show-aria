@@ -2,8 +2,8 @@ jQuery(document).ready(function($){
 
    /*
     * jQuery simple and accessible hide-show system (collapsible regions), using ARIA
-    * @version v1.4.0    
-    * Website: http://a11y.nicolas-hoffmann.net/hide-show/
+    * @version v1.5.0    
+    * Website: https://a11y.nicolas-hoffmann.net/hide-show/
     * License MIT: https://github.com/nico3333fr/jquery-accessible-hide-show-aria/blob/master/LICENSE
     */
    // loading expand paragraphs
@@ -13,13 +13,12 @@ jQuery(document).ready(function($){
        attr_labelledby = 'data-labelledby',
        attr_hidden = 'data-hidden',
        $expandmore = $('.js-expandmore'),
-       $to_expand = $('.js-to_expand'),
        $body = $('body'),
        delay = 1500,
        hash = window.location.hash.replace( "#", "" );
    
 
-   if ( $expandmore.length  &&  $to_expand.length ) { // if there are at least one :)
+   if ( $expandmore.length ) { // if there are at least one :)
       $expandmore.each( function(index_to_expand) {
           var $this = $(this) ,
               index_lisible = index_to_expand+1,
@@ -28,7 +27,7 @@ jQuery(document).ready(function($){
               $to_expand = $this.next(".js-to_expand"),
               $expandmore_text = $this.html();
           
-          $this.html( '<button class="' + $hideshow_prefix_classes + 'expandmore__button js-expandmore-button">' + $expandmore_text + '</button>' );
+          $this.html( '<button type="button" class="' + $hideshow_prefix_classes + 'expandmore__button js-expandmore-button">' + $expandmore_text + '</button>' );
           $button = $this.children('.js-expandmore-button');
           
           $to_expand.addClass( $hideshow_prefix_classes + 'expandmore__to_expand' ).stop().delay( delay ).queue( function() {
