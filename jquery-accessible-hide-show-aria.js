@@ -15,7 +15,8 @@ jQuery(document).ready(function($) {
         $expandmore = $('.js-expandmore'),
         $body = $('body'),
         delay = 1500,
-        hash = window.location.hash.replace("#", "");
+        hash = window.location.hash.replace("#", ""),
+        multiexpandable = false;
 
 
     if ($expandmore.length) { // if there are at least one :)
@@ -63,6 +64,13 @@ jQuery(document).ready(function($) {
             $destination = $('#' + $this.attr(attr_control));
 
         if ($this.attr(attr_expanded) === 'false') {
+
+            if (multiexpandable == false) {
+                $('button').removeClass('is-opened').attr(attr_expanded, 'false');
+                $('div').attr(attr_hidden, 'true');
+                console.log('all collapsed');
+            }
+            
             $this.addClass('is-opened').attr(attr_expanded, 'true');
             $destination.removeAttr(attr_hidden);
         } else {
