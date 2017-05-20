@@ -69,6 +69,9 @@ jQuery(document).ready(function($) {
                 $('button').removeClass('is-opened').attr(attr_expanded, 'false');
                 $('div').attr(attr_hidden, 'true');
                 console.log('all collapsed');
+            if (multiexpandable === false) {
+                $('.js-expandmore-button').removeClass('is-opened').attr(attr_expanded, 'false');
+                $('.js-to_expand').attr(attr_hidden, 'true');
             }
             
             $this.addClass('is-opened').attr(attr_expanded, 'true');
