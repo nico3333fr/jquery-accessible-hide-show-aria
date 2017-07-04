@@ -2,7 +2,7 @@ jQuery(document).ready(function($) {
 
     /*
      * jQuery simple and accessible hide-show system (collapsible regions), using ARIA
-     * @version v1.6.0   
+     * @version v1.7.0   
      * Website: https://a11y.nicolas-hoffmann.net/hide-show/
      * License MIT: https://github.com/nico3333fr/jquery-accessible-hide-show-aria/blob/master/LICENSE
      */
@@ -16,7 +16,9 @@ jQuery(document).ready(function($) {
         $body = $('body'),
         delay = 1500,
         hash = window.location.hash.replace("#", ""),
-        multiexpandable = true;
+        multiexpandable = true,
+        expand_all_text = 'Expand All',
+        collapse_all_text = 'Collapse All';
 
 
     if ($expandmore.length) { // if there are at least one :)
@@ -95,6 +97,32 @@ jQuery(document).ready(function($) {
             if (event.type === 'keydown' && (event.keyCode === 13 || event.keyCode === 32)) {
                 $button_in.trigger('click');
                 return false;
+            }
+
+        }
+
+
+    });
+
+    $body.on('click keydown', '.js-expandmore-all', function(event) {
+        var $this = $(this),
+            is_expanded = $this.attr('data-expand'),
+            $all_buttons = $('.js-expandmore-button'),
+            $all_destinations = $('.js-to_expand');
+
+        if (
+            event.type === 'click' ||
+            (event.type === 'keydown' && (event.keyCode === 13 || event.keyCode === 32))
+        ) {
+            if (is_expanded === 'true') {
+
+                $all_buttons.addClass('is-opened').attr(attr_expanded, 'true');
+                $all_destinations.removeAttr(attr_hidden);
+                $this.attr('data-expand', 'false').html(collapse_all_text);
+            } else {
+                $all_buttons.removeClass('is-opened').attr(attr_expanded, 'false');
+                $all_destinations.attr(attr_hidden, 'true');
+                $this.attr('data-expand', 'true').html(expand_all_text);
             }
 
         }
