@@ -22,9 +22,38 @@ This simple script transforms this simple piece of code:
     <div class="js-to_expand">here a wonderful hidden content about content 3</div>
 ```
 
-into shiny accessible hide/show by adding ARIA attributes. 
+into shiny accessible hide/show by adding ARIA attributes.
 
-Keyboard navigation is supported, based on ARIA DP (http://heydonworks.com/practical_aria_examples/#progressive-collapsibles && http://www.oaa-accessibility.org/examplep/tabpanel1/):
+Keyboard navigation is supported, based on ARIA DP (http://heydonworks.com/practical_aria_examples/#progressive-collapsibles && http://www.oaa-accessibility.org/examplep/tabpanel1/).
+
+### Hide/Show all
+
+It is possible to hide/show all with a button. All you have to do is wrapping each group with the class "collapse-group". You may set the button yourself if you prefer. Examples:
+
+```html
+    <div class="js-collapse-group">
+      <h3 class="js-expandmore">Content 4</h3>
+      <div class="js-to_expand">
+      <p>Lorem ipsum</p>
+      </div>
+      <h3 class="js-expandmore">Content 5</h3>
+      <div class="js-to_expand">
+        <p>Sic dolor</p>
+      </div>
+    </div>
+
+    <div class="js-collapse-group">
+      <button type="button" class="js-expandmore-all" data-open-text="Read all answers" data-close-text="Hide answers">Read all answers</button>
+      <h3 class="js-expandmore">Question 1</h3>
+      <div class="js-to_expand">
+        <p>Answer 1.</p>
+      </div>
+      <h3 class="js-expandmore">Question 2</h3>
+      <div class="js-to_expand is-opened">
+        <p>Answer 2 (is opened by default).</p>
+      </div>
+    </div>
+```
 
 ## Requirements
 
