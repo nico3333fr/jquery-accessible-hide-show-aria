@@ -2,7 +2,7 @@ jQuery(document).ready(function($) {
 
     /*
      * jQuery simple and accessible hide-show system (collapsible regions), using ARIA
-     * @version v1.7.0   
+     * @version v1.8.0   
      * Website: https://a11y.nicolas-hoffmann.net/hide-show/
      * License MIT: https://github.com/nico3333fr/jquery-accessible-hide-show-aria/blob/master/LICENSE
      */
@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
                 $to_expand = $this.next(".js-to_expand"),
                 $expandmore_text = $this.html();
 
-            $this.html('<button type="button" class="' + $hideshow_prefix_classes + 'expandmore__button js-expandmore-button"><span class="expand-symbol" aria-hidden="true"></span>' + $expandmore_text + '</button>');
+            $this.html('<button type="button" class="' + $hideshow_prefix_classes + 'expandmore__button js-expandmore-button"><span class="' + $hideshow_prefix_classes + 'expandmore__symbol" aria-hidden="true"></span>' + $expandmore_text + '</button>');
             var $button = $this.children('.js-expandmore-button');
 
             $to_expand.addClass($hideshow_prefix_classes + 'expandmore__to_expand').stop().delay(delay).queue(function() {
