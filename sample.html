@@ -7,8 +7,8 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <meta name="viewport" content="width=device-width" />
 <link rel="stylesheet" href="http://rocssti.net/downloads/rocssti-fr.css" />
-
-<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    
+<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="http://a11y.nicolas-hoffmann.net/hide-show/js/jquery-accessible-hide-show-aria.js"></script>
 
 <style>
@@ -22,15 +22,13 @@
   display: none;
 }
 /* optionnal or prefix with .js with modernizr */
-.expandmore__button[aria-expanded=false]:before,
-.expandmore__button[data-expanded=false]:before {
+.expandmore__button[aria-expanded=false] > .expandmore__symbol:before,
+.expandmore__button[data-expanded=false] > .expandmore__symbol:before {
   content : '+ ';
-  speak: none;
 }
-.expandmore__button[aria-expanded=true]:before,
-.expandmore__button[data-expanded=true]:before {
-  content : '- ';
-  speak: none;
+.expandmore__button[aria-expanded=true] > .expandmore__symbol:before,
+.expandmore__button[data-expanded=true] > .expandmore__symbol:before {
+  content : '− ';
 }
 
 .expandmore__button {
