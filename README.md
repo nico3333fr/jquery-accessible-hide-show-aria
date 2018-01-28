@@ -28,7 +28,7 @@ Keyboard navigation is supported, based on ARIA DP (http://heydonworks.com/pract
 
 ### Hide/Show all
 
-It is possible to hide/show all with a button. All you have to do is wrapping each group with the class "collapse-group". You may set the button yourself if you prefer. Examples:
+It is possible to hide/show all with a button. All you have to do is wrapping each group with the class "js-collapse-group". You may set the button yourself if you prefer. Examples:
 
 ```html
     <div class="js-collapse-group">
