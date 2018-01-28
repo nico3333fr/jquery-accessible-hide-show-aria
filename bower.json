@@ -3,7 +3,7 @@
   "description": "A simple jQuery code to provide an accessible hide/show system (collapsible region), using ARIA.",
   "homepage": "https://a11y.nicolas-hoffmann.net/hide-show/",
   "main": "jquery-accessible-hide-show-aria.js",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "keywords": [
     "Accessibility",
     "ARIA",
