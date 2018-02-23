@@ -1,11 +1,9 @@
-Jquery accessible hide/show using ARIA
+jQuery accessible hide/show using ARIA
 =================================
 
 A simple jQuery code to provide accessible hide/show system using ARIA.
 
 Full demo is here: https://a11y.nicolas-hoffmann.net/hide-show/
-
-===========================
 
 This simple script transforms this simple piece of code:
 
@@ -47,13 +45,13 @@ For CSS, you may add:
   color: inherit;
 }
 
-.expandmore__button[aria-expanded=false]:before,
-.expandmore__button[data-expanded=false]:before{
+.expandmore__button[aria-expanded=false] > .expandmore__symbol:before,
+.expandmore__button[data-expanded=false] > .expandmore__symbol:before{
   content : '+ ';
 }
-.expandmore__button[aria-expanded=true]:before,
-.expandmore__button[data-expanded=true]:before{
-  content : '- ';
+.expandmore__button[aria-expanded=true] > .expandmore__symbol:before,
+.expandmore__button[data-expanded=true] > .expandmore__symbol:before{
+  content : '− ';
 }
 ```
 
@@ -71,4 +69,4 @@ This script exists also in a Vanilla-JS version, have a look at [Van11y hide-sho
 
 <img src="https://www.nicolas-hoffmann.net/bordel/chuck-norris1.jpg" alt="Chuck Norris approved this" />
 
-P.S: this plugin is in [MIT license](https://github.com/nico3333fr/jquery-accessible-tabs-aria/blob/master/LICENSE). It couldn't be done without the precious help of @ScreenFeedFr, @goetsu, @johan_ramon, @accesbilis, @Kozlika and @romaingervois.
+P.S: this plugin is in [MIT license](https://github.com/nico3333fr/jquery-accessible-tabs-aria/blob/master/LICENSE). It couldn't be done without the precious help of @ScreenFeedFr, @goetsu, @johan_ramon, @accesbilis, @Kozlika, @anneCav and @romaingervois.
