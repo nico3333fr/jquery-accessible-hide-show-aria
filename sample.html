@@ -37,7 +37,12 @@
   font-size: inherit;
   color: inherit;
 }
-
+.js-expandmore-all {
+    padding: .25em .5em;
+    border: 1px solid #999;
+    background-color: #eee;
+    margin-bottom: .5em;
+}
 
 </style>
 </head>
@@ -47,16 +52,47 @@
 
       <h2 class="js-expandmore">
       	Content 1
-      </h2> 
+      </h2>
       <div class="js-to_expand">here a wonderful hidden content about content 1</div>
-      <br /><br /><br />
+      <br /><br />
       <h2 class="js-expandmore">
       	Content 2
-      </h2> 
+      </h2>
       <div class="js-to_expand is-opened">Lorem <a href="#">fdsfdsfds</a> ipsum about content 2 (opened by default)</div>
-      <br /><br /><br />
+      <br /><br />
       <h2 class="js-expandmore">Content 3</h2>
       <div class="js-to_expand">here a wonderful hidden content about content 3</div>
+      <br /><br />
+
+    <h1>Hide/show system with collapse or expand all button</h1>
+
+        <h2>Without button in html source</h2>
+        <div class="js-collapse-group">
+          <h3 class="js-expandmore">Content 4</h3>
+          <div class="js-to_expand">
+          <p>Lorem ipsum</p>
+          </div>
+
+          <h3 class="js-expandmore">Content 5</h3>
+          <div class="js-to_expand">
+            <p>Sic dolor</p>
+          </div>
+        </div>
+        <br /><br />
+
+        <h2>With button in html source</h2>
+        <div class="js-collapse-group">
+          <button type="button" class="js-expandmore-all" data-open-text="Read all answers" data-close-text="Hide answers">Read all answers</button>
+          <h3 class="js-expandmore">Question 1</h3>
+          <div class="js-to_expand">
+            <p>Answer 1.</p>
+          </div>
+          <h3 class="js-expandmore">Question 2</h3>
+          <div class="js-to_expand is-opened">
+            <p>Answer 2 (is opened by default).</p>
+          </div>
+        </div>
+        <br /><br />
 
 </div>
 </body>

@@ -17,8 +17,9 @@ jQuery(document).ready(function($) {
         delay = 1500,
         hash = window.location.hash.replace("#", ""),
         multiexpandable = true,
-        expand_all_text = 'Expand All',
-        collapse_all_text = 'Collapse All';
+        $collapse_group = $('.js-collapse-group'),
+        expand_all_default = 'Expand all',
+        collapse_all_default = 'Collapse all';
 
 
     if ($expandmore.length) { // if there are at least one :)
@@ -98,31 +99,62 @@ jQuery(document).ready(function($) {
                 $button_in.trigger('click');
                 return false;
             }
-
         }
-
-
     });
 
+    // collapse or extend groups
+
+    // prepare html
+    if ($collapse_group.length) {
+        $collapse_group.each(function(index_group_to_expand) {
+            var $this = $(this),
+                index_group_lisible = index_group_to_expand + 1,
+                $button_all = $this.children('.js-expandmore-all'),
+                button_exists = $button_all.length;
+
+            // put a unique id on each group
+            $this.attr('id', 'group-' + index_group_lisible);
+
+            // add a button if there is not
+            if (!button_exists) {
+              $this.prepend('<button type="button" class="js-expandmore-all">'+ expand_all_default + '</button>');
+            }
+
+            // if necessary add attributes to all buttons, new or not
+            $this.children('.js-expandmore-all').each(function(){
+              $(this).attr({
+                'data-group': 'group-' + index_group_lisible,
+                'data-expanded': $(this).attr('data-expanded') || 'false'
+              });
+            });
+      });
+    }
+
+    // button actions
     $body.on('click keydown', '.js-expandmore-all', function(event) {
         var $this = $(this),
-            is_expanded = $this.attr('data-expand'),
-            $all_buttons = $('.js-expandmore-button'),
-            $all_destinations = $('.js-to_expand');
+            is_expanded = $this.attr('data-expanded'),
+            $data_group = $this.attr('data-group'),
+            $targeted_group = $('#' + $data_group),
+            $all_buttons = $targeted_group.find('.js-expandmore-button'),
+            $all_destinations = $targeted_group.find('.js-to_expand'),
+            expand_all_text = $this.attr('data-open-text') || expand_all_default,
+            collapse_all_text = $this.attr('data-close-text') || collapse_all_default;
 
-        if (
-            event.type === 'click' ||
+        if (event.type === 'click' ||
             (event.type === 'keydown' && (event.keyCode === 13 || event.keyCode === 32))
         ) {
-            if (is_expanded === 'true') {
 
+            if (is_expanded === 'false') {
                 $all_buttons.addClass('is-opened').attr(attr_expanded, 'true');
                 $all_destinations.removeAttr(attr_hidden);
-                $this.attr('data-expand', 'false').html(collapse_all_text);
+                $this.attr('data-expanded', 'true').html(collapse_all_text);
+
             } else {
+
                 $all_buttons.removeClass('is-opened').attr(attr_expanded, 'false');
                 $all_destinations.attr(attr_hidden, 'true');
-                $this.attr('data-expand', 'true').html(expand_all_text);
+                $this.attr('data-expanded', 'false').html(expand_all_text);
             }
 
         }
