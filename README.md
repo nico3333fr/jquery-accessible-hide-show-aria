@@ -59,7 +59,7 @@ For CSS, you may add:
  
 This jQuery plugin __doesn't style anything__, styles can be added using other classes.
 
-A demo page can be found here: https://a11y.nicolas-hoffmann.net/hide-show/
+A demo page can be found here with additional features/docs: https://a11y.nicolas-hoffmann.net/hide-show/
 
 Enjoy.
 
