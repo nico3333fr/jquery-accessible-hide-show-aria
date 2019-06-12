@@ -109,7 +109,7 @@ jQuery(document).ready(function($) {
 
     });
 
-    $body.on('click keydown', '.js-expandmore-all', function(event) {
+    $body.on('click', '.js-expandmore-all', function(event) {
         var $this = $(this),
             options = $this.data(),
             is_expanded = $this.attr('data-expand'),
@@ -118,21 +118,14 @@ jQuery(document).ready(function($) {
             $all_buttons = $('.js-expandmore-button:not([data-not-all-expands])'),
             $all_destinations = $('.js-to_expand:not([data-not-all-expands])');
 
-        if (
-            event.type === 'click' ||
-            (event.type === 'keydown' && (event.keyCode === 13 || event.keyCode === 32))
-        ) {
-            if (is_expanded === 'true') {
-
-                $all_buttons.addClass('is-opened').attr(attr_expanded, 'true');
-                $all_destinations.removeAttr(attr_hidden);
-                $this.attr('data-expand', 'false').html(txt_collapse_all);
-            } else {
-                $all_buttons.removeClass('is-opened').attr(attr_expanded, 'false');
-                $all_destinations.attr(attr_hidden, 'true');
-                $this.attr('data-expand', 'true').html(txt_expand_all);
-            }
-
+        if (is_expanded === 'true') {
+            $all_buttons.addClass('is-opened').attr(attr_expanded, 'true');
+            $all_destinations.removeAttr(attr_hidden);
+            $this.attr('data-expand', 'false').html(txt_collapse_all);
+        } else {
+            $all_buttons.removeClass('is-opened').attr(attr_expanded, 'false');
+            $all_destinations.attr(attr_hidden, 'true');
+            $this.attr('data-expand', 'true').html(txt_expand_all);
         }
 
 
